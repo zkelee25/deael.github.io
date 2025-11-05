@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>刘明丽 - Diatom Evolution & Adaptation Lab (DEAL)</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 导航栏样式 */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c5e92;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 0.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem;
+    display: block;
+    transition: color 0.3s;
+    text-align: center;
+}
+
+.nav-links a:hover {
+    color: #2c5e92;
+}
+
+.nav-zh {
+    font-size: 0.9rem;
+    display: block;
+}
+
+.nav-en {
+    font-size: 0.8rem;
+    color: #666;
+    display: block;
+}
+
+.lang-switch {
+    display: flex;
+}
+
+.lang-switch button {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 0.3rem 0.6rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.lang-switch button:hover {
+    background-color: #f0f0f0;
+}
+
+/* 主体内容样式 */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.student-hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.student-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #eaeaea;
+}
+
+.student-meta {
+    flex: 1;
+    min-width: 300px;
+}
+
+.student-name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #2c5e92;
+}
+
+.student-position {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.student-contact {
+    margin-bottom: 1.5rem;
+}
+
+.student-contact a {
+    color: #2c5e92;
+    text-decoration: none;
+}
+
+.student-contact a:hover {
+    text-decoration: underline;
+}
+
+.student-links {
+    margin-bottom: 1.5rem;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #2c5e92;
+    color: #2c5e92;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #2c5e92;
+    color: white;
+}
+
+.btn-back {
+    color: #666;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-back:hover {
+    color: #2c5e92;
+}
+
+/* 内容区块样式 */
+.student-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.student-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c5e92;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 0.5rem;
+}
+
+.student-section p {
+    margin-bottom: 1rem;
+}
+
+.student-section ul {
+    padding-left: 1.5rem;
+}
+
+.student-section li {
+    margin-bottom: 0.5rem;
+}
+
+.pub-list li {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.pdf-link {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.pdf-link:hover {
+    background-color: #c0392b;
+}
+
+/* 教育背景时间线样式 */
+.education-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #2c5e92;
+}
+
+.education-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.education-item::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #2c5e92;
+}
+
+.education-period {
+    font-weight: bold;
+    color: #2c5e92;
+    margin-bottom: 0.3rem;
+}
+
+.education-degree {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.education-school {
+    color: #666;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c5e92;
+    color: white;
+    margin-top: 3rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links li {
+        margin: 0.3rem;
+    }
+    
+    .student-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .student-photo {
+        margin: 0 auto;
+    }
+    
+    .lang-switch {
+        margin-top: 1rem;
+    }
+}
+</style>
+</head>
+<body>
+<!-- 导航栏 -->
+<nav>
+    <div class="logo">Diatom Evolution & Adaptation Lab</div>
+
+    <ul class="nav-links">
+      <li>
+        <a href="index.html">
+          <span class="nav-zh">首页</span>
+          <span class="nav-en">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="research.html">
+          <span class="nav-zh">研究方向</span>
+          <span class="nav-en">Research</span>
+        </a>
+      </li>
+      <li>
+        <a href="members.html">
+          <span class="nav-zh">成员介绍</span>
+          <span class="nav-en">Lab Members</span>
+        </a>
+      </li>
+      <li>
+        <a href="publications.html">
+          <span class="nav-zh">研究成果</span>
+          <span class="nav-en">Publications</span>
+        </a>
+      </li>
+      <li>
+        <a href="projects.html">
+          <span class="nav-zh">项目与合作</span>
+          <span class="nav-en">Projects</span>
+        </a>
+      </li>
+      <li>
+        <a href="teaching.html">
+          <span class="nav-zh">教学与指导</span>
+          <span class="nav-en">Teaching</span>
+        </a>
+      </li>
+      <li>
+        <a href="news.html">
+          <span class="nav-zh">新闻与动态</span>
+          <span class="nav-en">News</span>
+        </a>
+      </li>
+      <li>
+        <a href="gallery.html">
+          <span class="nav-zh">实验室风采</span>
+          <span class="nav-en">Gallery</span>
+        </a>
+      </li>
+    </ul>
+    <div class="lang-switch">
+        <button onclick="switchLang('en')">EN</button>
+        <button onclick="switchLang('zh')">中文</button>
+    </div>
+</nav>
+
+<!-- 主体：学生档案 -->
+<main class="student-page">
+    <section class="student-hero">
+      <img class="student-photo" src="../images/liumingli.jpg" alt="刘明丽">
+      <div class="student-meta">
+        <h1 class="student-name">刘明丽 (Minli Liu)</h1>
+        <p class="student-position">硕士研究生 (Master Candidate)</p>
+        <p class="student-contact">
+          邮箱 (Email): <a href="mailto:liuminli@example.edu">liuminli@example.edu</a>
+        </p>
+
+        <!-- 本地 CV 下载按钮 与 外部学术链接 -->
+        <p class="student-links">
+          <a href="../pdf/Li_Yangyang_CV.pdf" class="btn-outline" target="_blank" download>下载简历 (Download CV)</a>
+          <a href="https://scholar.google.com/example" class="btn-outline" target="_blank">谷歌学术 (Google Scholar)</a>
+        </p>
+
+        <!-- 返回列表 -->
+        <p><a href="../members.html" class="btn-back">← 返回成员页 (Back to Members)</a></p>
+      </div>
+    </section>
+
+    <section class="student-section">
+      <h2>教育背景 (Education)</h2>
+      <div class="education-timeline">
+        <div class="education-item">
+          <div class="education-period">2023 - 2026 (预计 Expected)</div>
+          <div class="education-degree">博士研究生 (PhD Candidate) - 海洋生物学 (Marine Biology)</div>
+          <div class="education-school">厦门大学 (Xiamen University)</div>
+        </div>
+        <div class="education-item">
+          <div class="education-period">2019 - 2023</div>
+          <div class="education-degree">理学学士 (Bachelor of Science) - 海洋科学 (Marine Science)</div>
+          <div class="education-school">中国海洋大学 (Ocean University of China)</div>
+        </div>
+        <div class="education-item">
+          <div class="education-period">2016 - 2019</div>
+          <div class="education-degree">高中 (High School)</div>
+          <div class="education-school">山东省实验中学 (Shandong Experimental High School)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="student-section">
+      <h2>研究方向 (Research Interests)</h2>
+      <p>硅藻对暖化的响应：生理与转录组分析。<br>
+         How diatoms respond to warming: physiological and transcriptomic analyses.
+      </p>
+    </section>
+
+    <section class="student-section">
+      <h2>代表论文 (Selected Publications)</h2>
+      <ul class="pub-list">
+        <li>
+          Li, Z.K.*, Li, Y., et al. (2025) Polyploidization ... Nature Climate Change.
+          <a href="../pdf/Li_et_al_2025.pdf" class="pdf-link" target="_blank">PDF</a>
+        </li>
+        <!-- 可列更多 -->
+      </ul>
+    </section>
+
+    <section class="student-section">
+      <h2>其它信息 (Other Info)</h2>
+      <ul>
+        <li>导师 (Advisor): 李志宽 (Zhengke Li)</li>
+        <li>办公室 (Office): 海洋实验室123 (Room 123, Marine Lab)</li>
+        <li>研究方向 (Research Focus): 硅藻生态与进化 (Diatom Ecology and Evolution)</li>
+        <li>实验室技能 (Lab Skills): 分子生物学技术, 显微镜操作, 数据分析 (Molecular Biology Techniques, Microscopy, Data Analysis)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Diatom Evolution & Adaptation Lab | Zhengke Li</p>
+  </footer>
+
+  <script>
+    // 语言切换功能 (如果需要保留)
+    function switchLang(lang) {
+      // 这里可以添加语言切换逻辑
+      alert('Language switched to: ' + lang);
+    }
+  </script>
+</body>
+</html>
