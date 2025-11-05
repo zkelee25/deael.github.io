@@ -104,16 +104,15 @@ By integrating experimental evolution, physiological and biochemical analyses, m
     <div class="resources-grid">
 
  <a href="https://so.sciencesoft.cn/" target="_blank" class="resource-item" style="background-color:#FF6B6B;">学术搜索</a>
+  <a href="https://gfsoso.99lb.net/" target="_blank" class="resource-item" style="background-color:#FF6B6B;">谷粉学术</a> 
   <a href="https://chat.deepseek.com/" target="_blank" class="resource-item" style="background-color:#FF6B6B;">DeepSeek</a>
+  <br><br><br>
 
 
  <a href="https://www.nature.com/" target="_blank" class="resource-item" style="background-color:#FF6B6B;">Nature</a>
       <a href="https://www.cell.com/" target="_blank" class="resource-item" style="background-color:#FFD93D;">Cell</a>
       <a href="https://www.sciencemag.org/" target="_blank" class="resource-item" style="background-color:#1A535C;">Science</a>
-	  <a href="https://www.nature.com/nclimate/" target="_blank" class="resource-item" style="background-color:#1A535C;">Nature Climae Change</a>
-  
-	  
-	  
+	  <a href="https://www.nature.com/nclimate/" target="_blank" class="resource-item" style="background-color:#009ABB;">Nature Climae Change</a> 
     </div>
 	  </div>
 	  
@@ -125,6 +124,11 @@ By integrating experimental evolution, physiological and biochemical analyses, m
 	  <a href="https://my.sust.edu.cn/" target="_blank" class="resource-item" style="background-color:#4ECDC4;">陕西科技大学综合门户</a>
 	  <a href="http://shebei.www.sust.edu.cn/" target="_blank" class="resource-item" style="background-color:#4ECDC4;">陕科大设备预约与试剂采购</a>
    	  <a href="http://cwc.www.sust.edu.cn/index.htm" target="_blank" class="resource-item" style="background-color:#4ECDC4;">陕科大账务处</a>
+   	  <a href="http://chaxin.sust.edu.cn/index.php" target="_blank" class="resource-item" style="background-color:#4ECDC4;">陕科大科技查新</a>
+   	  <a href="http://cwc.www.sust.edu.cn/index.htm" target="_blank" class="resource-item" style="background-color:#4ECDC4;">陕科大</a>
+   	  <a href="http://cwc.www.sust.edu.cn/index.htm" target="_blank" class="resource-item" style="background-color:#4ECDC4;">陕科大</a>
+   	  <a href="http://cwc.www.sust.edu.cn/index.htm" target="_blank" class="resource-item" style="background-color:#4ECDC4;">陕科大</a>
+   	  <a href="http://cwc.www.sust.edu.cn/index.htm" target="_blank" class="resource-item" style="background-color:#4ECDC4;">陕科大</a>
 
 
 
@@ -139,6 +143,7 @@ By integrating experimental evolution, physiological and biochemical analyses, m
 
 
   <!-- ====== 页脚 ====== -->
+<!-- ====== 页脚 ====== -->
 <footer>
   <p>© 2025 Diatom Evolution & Adaptation Lab (DEAL) — Zhengke Li at SUST</p>
   <p>Designed by Zhengke</p>
@@ -146,6 +151,18 @@ By integrating experimental evolution, physiological and biochemical analyses, m
     网站访问量: <span id="count-number">0</span> 次
   </div>
 </footer>
+
+<!-- ====== 访问次数统计脚本 ====== -->
+<script>
+  // 使用 CountAPI 统计访问量
+  // 这里的 "deael_lab_website" 可以自定义为唯一标识符
+  fetch('https://api.countapi.xyz/hit/deael_lab_website/visits')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('count-number').innerText = data.value;
+    })
+    .catch(err => console.error('访问统计获取失败', err));
+</script>
 </body>
 </html>
 
