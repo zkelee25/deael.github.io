@@ -793,3 +793,26 @@ footer {
 .education-school {
     color: #666;
 }
+.profile-container {
+    font-size:1.4em;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+}
+.profile-image {
+    flex-shrink: 0;
+    text-align: center;
+}
+.profile-image img {
+    width: 220px;
+    height: 220px;
+    border-radius: 8px;
+}
+.profile-content {
+    flex: 1;
+}
+.contact {
+    margin-top: 10px;
+    font-size: 0.95em;
+}
